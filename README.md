@@ -64,6 +64,7 @@ Edit `config.yaml` to set dataset paths, model directories, and model name. A sa
      ```
    - Using V2CE:
      ```bash
+     git clone https://github.com/ucsd-hdsi-dvs/V2CE-Toolbox
      python v2ce_script.py --config config.yaml
      ```
 
