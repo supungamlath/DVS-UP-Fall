@@ -387,8 +387,8 @@ def draw_2d_snapshot(spike_tuples, time_window=None, title="DVS Events 2D View")
 # Example usage
 if __name__ == "__main__":
     # Load your DVS events
-    v2e_events_file_path = "E:\\Projects\\PythonProjects\\SNN\\data\\har-up-spiking-dataset-160\\Subject1Activity1Trial1Camera1\\Subject1Activity1Trial1Camera1.h5"
-    v2ce_events_file_path = "E:\\Projects\\PythonProjects\\SNN\\data\\dvs-up-fall-v2ce-dataset-160\\Subject1Activity1Trial1Camera1\\Subject1Activity1Trial1Camera1-ceil_10-fps_19-events.npz"
+    v2e_events_file_path = ""
+    v2ce_events_file_path = ""
 
     with h5py.File(v2e_events_file_path, "r") as spike_data:
         spike_array = np.array(spike_data["events"])
