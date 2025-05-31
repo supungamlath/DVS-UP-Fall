@@ -1,0 +1,6 @@
+h5py==3.10.0
+numpy==1.26.4
+pandas==2.2.0
+snntorch==0.9.1
+scikit_learn==1.4.0
+norse==1.1.0
