@@ -1,4 +1,4 @@
-# DVS-UP-Fall Dataset 
+# DVS-UP-Fall Dataset Benchmark
 
 This project implements a Spiking Neural Network (SNN) for as a baseline solution for the DVS-UP-Fall dataset, specifically for fall detection using DVS (Dynamic Vision Sensor) data. The codebase includes dataset conversion scripts, visualization tools, and a full SNN training pipeline.
 
