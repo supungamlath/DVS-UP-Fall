@@ -1,0 +1,6 @@
+paths:
+  dataset_dir: ""
+  model_dir: ""
+
+clearml:
+  model_name: "model1"
