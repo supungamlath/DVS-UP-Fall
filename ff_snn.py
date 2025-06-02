@@ -132,8 +132,6 @@ if __name__ == "__main__":
     print(f"Loaded configuration from: {args.config}")
 
     # Extract paths and project configuration
-    dataset_dir = Path(config["paths"]["dataset_dir"])
-    model_dir = Path(config["paths"]["model_dir"])
     model_name = config["clearml"]["model_name"]
 
     # Read model parameters
@@ -157,6 +155,7 @@ if __name__ == "__main__":
 
     # Read dataset parameters
     dataset_params = {
+        "emulator": "v2ce",
         "target_height": 30,
         "target_width": 40,
         "time_duration": 60.0,
@@ -165,6 +164,7 @@ if __name__ == "__main__":
         "camera1_only": False,
         "split_by": "subjects",  # "subjects" or "trials"
     }
+    dataset_dir = Path(config["paths"][f'{dataset_params["emulator"]}_dataset_dir'])
 
     # Set device (GPU if available, otherwise CPU)
     if torch.cuda.is_available():
@@ -244,6 +244,5 @@ if __name__ == "__main__":
     )
 
     # Save model
-    model_dir.mkdir(parents=True, exist_ok=True)
-    torch.save(model_after.state_dict(), model_dir / f"{model_name}.pth")
+    torch.save(model_after.state_dict(), f"{model_name}.pth")
     print(f"Model saved as '{model_name}.pth'")
