@@ -128,12 +128,12 @@ if __name__ == "__main__":
     # Parse command line arguments
     parser = argparse.ArgumentParser(description="SNN Training Script")
     parser.add_argument(
-        "--config", type=str, default="config sample.yaml", help="Path to configuration file (default: config.yaml)"
+        "--config", type=str, default="config.yaml", help="Path to configuration file (default: config.yaml)"
     )
     args = parser.parse_args()
 
     # Init ClearML project
-    name = "V2CE FF-SNN B H1000 S40,30 T600 D0.5"
+    name = "V2CE FF-SNN M H1000 S40,30 T600 D0.5"
     task = Task.init(
         project_name="DVS-UP-Fall-Evaluation",
         task_name=name,
@@ -154,7 +154,7 @@ if __name__ == "__main__":
         "tau_syn": 16.0,
         "input_features": 2 * 40 * 30,
         "hidden_features": 1000,
-        "multiclass": False,
+        "multiclass": True,
     }
     task.connect(model_params, name="Model Parameters")
     last_layer_size = 12 if model_params["multiclass"] else 2
