@@ -1,1 +1,5 @@
 config.yaml
+clearml*
+v2ce/
+temp/
+__pycache__/
