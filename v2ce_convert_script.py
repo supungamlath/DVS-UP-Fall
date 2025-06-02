@@ -7,7 +7,7 @@ from datetime import datetime
 from argparse import Namespace
 
 from utils import load_config
-from v2ce.v2ce import main
+from v2ce import main
 
 
 def get_zip_files(root_folder):
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     zipped_image_folders = get_zip_files(up_fall_dataset_dir)
     print(len(zipped_image_folders))
 
-    extract_base_dir = "E:\\Projects\\PythonProjects\\V2CE-Toolbox\\temp"
+    extract_base_dir = temp_dir
     os.makedirs(extract_base_dir, exist_ok=True)
 
     for zip_file in zipped_image_folders:
