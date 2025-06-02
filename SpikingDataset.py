@@ -78,12 +78,12 @@ class SpikingDataset(Dataset):
     def __getitem__(self, idx):
         events_folder = self.folder_names[idx]
 
-        events_file_path = Path(os.path.join(self.root_dir, self.folder_names[idx], events_folder + ".h5"))
+        events_file_path = Path(os.path.join(self.root_dir, events_folder, events_folder + ".h5"))
         if events_file_path.exists():
             with h5py.File(events_file_path, "r") as spike_data:
                 spike_tuples = np.array(spike_data["events"])
         else:
-            events_file_path = next(Path(os.path.join(self.root_dir, events_folder)).glob("*.npz"))
+            events_file_path = Path(os.path.join(self.root_dir, events_folder, events_folder + ".npz"))
             spike_data = np.load(events_file_path)
             spike_tuples = np.array([list(spike) for spike in spike_data["event_stream"]])
 
