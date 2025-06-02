@@ -1,6 +1,8 @@
 paths:
-  dataset_dir: ""
-  model_dir: ""
+  up_fall_dataset_dir: "data/up_fall_dataset/"
+  v2e_dataset_dir: "data/dvs-up-fall-v2e-dataset-160"
+  v2ce_dataset_dir: "data/dvs-up-fall-v2ce-dataset-160"
+  model_dir: "data/models"
 
 clearml:
   model_name: "model1"
